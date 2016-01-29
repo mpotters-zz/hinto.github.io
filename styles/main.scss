@@ -1,0 +1,372 @@
+// bower:scss
+// endbower
+
+
+/******************************************
+/* SETUP
+/*******************************************/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.alignright {
+  float: right;
+  /* note the padding around a right floated image */
+  padding: 0 0 10px 10px; 
+}
+
+.alignleft {
+  float: left;
+  /* note the padding around a left floated image */
+ padding: 0 10px 10px 0; 
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body, html {
+  background: #fafafa;
+  height: 100%;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: green;
+$link-color: black;
+
+
+.hero-unit {
+  
+  position: relative;
+  height: 100%;
+  background-image: url("/images/products/COLOR-150419-02-012.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 25%;
+  background-size: 100%;
+  z-index: 1000;
+  
+
+
+  img{
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+#monogram-unit {
+  position: relative;
+  margin: 0 auto;
+  padding-top: 15px;
+  z-index: 501;
+  height: 50px;
+
+  img{
+    margin-top: 60px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 205px;
+    height: 142px;
+    transform: translate(-50%, -50%);
+  }
+
+  .close {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+#monogram-unit-about {
+  position: relative;
+  margin: 0 auto;
+  padding-top: 15px;
+  z-index: 501;
+  height: 50px;
+
+  img{
+    margin-top: 60px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 410px;
+    height: 284px;
+    transform: translate(-50%, -50%);
+  }
+
+}
+
+#product-wrap {
+  position: relative;
+  /*height: 65vh;*/
+  z-index: 500;
+  top: 10vh;
+  
+  .productOneDescription {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+
+    font-size: 100px;
+    font-style: bold;
+
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition:  opacity 1s;
+    transition: opacity 1s;
+  }
+
+  .productOne:hover .productOneDescription {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .product {
+    /*margin-top: 100px;*/
+    height: 704px;
+    width: 550px;
+    /*position: absolute;*/
+   /* top: 50%;
+    left: 50%;*/
+    /*transform: translate(-50%, -50%);
+    -webkit-transition:  opacity 1s;
+    transition: opacity 1s;*/
+  }
+
+  .productOne:hover .product {
+    visibility: visible;
+    opacity: 0.5;
+  }
+
+
+  a {
+    text-decoration: none;
+    color: $link-color;
+  }
+
+  a:visited { text-decoration: none; color:$link-color; }
+  a:hover { text-decoration: none; color:$link-color; }
+  a:focus { text-decoration: none; color:$link-color; }
+  a:hover, a:active { text-decoration: none; color:$link-color; }
+
+}
+
+#about-wrap{ 
+
+  background-color: black;
+
+
+  .aboutSection {
+
+    color: white;
+    background-color: black;
+    height: 90vh;
+
+    .columns {
+      column-count: 2;
+      /*column-gap: 20px;*/
+      /*column-width: 35%;*/
+    }
+
+
+    .english {
+      margin-top: 25%;
+      padding-left: 20%;
+      padding-right: 15%;
+      font-size: 24px;
+      /*width: 40%;
+      padding-left: 5%;
+      padding-right: 55%;
+      margin-right: 16px 0px !important; */
+    }
+
+    .japanese{
+      margin-top: 25%;
+      padding-left: 15%;
+      padding-right: 20%;
+      font-size: 24px;
+      /*width: 40%;
+      padding-left: 55%;
+      padding-right: 5%;
+      margin: 0;
+      float: right;
+      background-color: black;*/
+    }
+
+  }
+}
+
+#menu-bottom {
+  z-index: 600;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 1em;
+  margin: 0 auto;
+  width: 100%;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+  }
+
+  li {
+    display: inline;
+    opacity: 0.8;
+    /*padding: 0 30px;*/
+
+    -webkit-transition:  opacity 0.4s;
+    transition: opacity 0.4s;
+
+  }
+
+  li:hover {
+    /*visibility: visible;*/
+    opacity: 0.4;
+  }
+
+  a {
+    text-decoration: none;
+    color: $link-color;
+  }
+
+  a:visited { text-decoration: none; color:$link-color; }
+  a:hover { text-decoration: none; color:$link-color; }
+  a:focus { text-decoration: none; color:$link-color; }
+  a:hover, a:active { text-decoration: none; color:$link-color; }
+
+  li:first-of-type {
+    position: absolute;
+    left: 1%;
+
+  }
+
+  li:last-of-type {
+    position: absolute;
+    right: 1%;
+  }
+
+  .middleThree {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+}
+
+#menu-bottom-about {
+  background-color: black;
+
+  z-index: 600;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 1em;
+  margin: 0 auto;
+  width: 100%;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+  }
+
+  li {
+    display: inline;
+    opacity: 0.8;
+    /*padding: 0 30px;*/
+
+    -webkit-transition:  opacity 0.6s;
+    transition: opacity 0.6s;
+
+  }
+
+  li:hover {
+    /*visibility: visible;*/
+    opacity: 0.4;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  a:visited { text-decoration: none; color:white; }
+  a:hover { text-decoration: none; color:white; }
+  a:focus { text-decoration: none; color:white; }
+  a:hover, a:active { text-decoration: none; color:white; }
+
+  li:first-of-type {
+    position: absolute;
+    left: 1%;
+
+  }
+
+  li:last-of-type {
+    position: absolute;
+    right: 1%;
+  }
+
+  .middleThree {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+/******************************************
+/* OVERRIDING OPEN, CLOSE, NOSCROLL
+/*******************************************/
+
+.bodyNoScroll {
+  overflow: hidden;
+}
+
+.open {
+  display: inline;
+  visibility: visible;
+  opacity: 1;
+}
+
+.close {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
